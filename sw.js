@@ -1,6 +1,6 @@
 // SuperCheck - Service Worker (funcionamiento offline)
 // Cambia la versión cada vez que publiques una actualización de index.html
-const CACHE = 'supercheck-v1';
+const CACHE = 'supercheck-v2';
 const ARCHIVOS = [
   './',
   './index.html',
