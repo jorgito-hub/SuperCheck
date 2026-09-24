@@ -1,6 +1,6 @@
 // SuperCheck - Service Worker (funcionamiento offline)
 // Cambia la versión cada vez que publiques una actualización de index.html
-const CACHE = 'supercheck-v1';
+const CACHE = 'supercheck-v2';
 const ARCHIVOS = [
   './',
   './index.html',
@@ -12,7 +12,7 @@ const ARCHIVOS = [
 ];
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ARCHIVOS)));
+   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(ARCHIVOS.map((u) => new Request(u, { cache: 'reload' })))));
   self.skipWaiting();
 });
 
